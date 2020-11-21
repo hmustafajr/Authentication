@@ -1,0 +1,9 @@
+When building applications that integrate externally, you're exposing the application to external windows where
+information will be sent to and from channels.
+
+It's recommended that your application authenticates the calls made.
+
+This repository will cover three authentication methods:
+Auth Code Grant
+Implicit Grant
+JWT (JSON Wed Token) Grant
