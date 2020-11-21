@@ -8,9 +8,10 @@ To complete the flow you must have:
 - Redirect URI
 
 The Auth Code Grant method is primarily used for web apps that have a user interface and require the user to take action on something.
-The flow consists of building a request using the iKey and secret key to an endpoint
-If valid the service authorizes the request and then redirects back to a predetermined URI
-It also returns a query string code variable that contains an authorization code
+
+The flow consists of building a request using the iKey and secret key to an endpoint. If valid the service authorizes the request and then redirects back to a predetermined URI
+It also returns a query string code variable that contains an authorization code.
 - This code is then used to make a second request that returns the JSON that contains an access token and refresh token
+
 Finally, you use the access token to retreive data or access resources. If the access token expires the refresh token can be used in another request to retrieve a new access token.
 - Refresh tokens are good for 30 days.
