@@ -1,0 +1,8 @@
+The primary use of Auth Code Grant is to authenticate a user application that's running on the web and where a user interfaces with the application.
+
+This is typically used for applications that are authenticating each user on an individual basis.
+
+To complete the flow you must have:
+- An Integrator Key (iKey)
+- A Secret Key
+- Redirect URI
