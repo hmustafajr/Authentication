@@ -5,7 +5,10 @@ It's recommended that your application authenticates the calls made.
 
 This repository will cover three authentication methods:
 - Auth Code Grant: This method is a multi-step secure OAuth solution that is typically integrated into web application scenarios. This typical flow of Auth Code Grant involves multiple steps that result in obtaining an access token. This flow is typically used when a user is present to take action. If you want a more automated approach you should explore using a JSON Web Token (JWT) grant instead.
+
 - Implicit Grant: This method is intended for only mobile application environments. It allows concise and streamlined process for authentication with one less step compared to the Auth Code Grant flow.
 Note: This also means that the Implicit Grant Method is not as secure, because the access token must be stored locally.
 
-- JWT (JSON Wed Token) Grant
+- JWT (JSON Wed Token) Grant: This method involves a high degree of trust. The application can impersonate one or more users.
+If your application does not need impersonation capabilities to do automated actions, you should probably not use this and focus on Auth Code Grant instead.
+From High level, JWT is a versatile and secure option for applications that need to run automated services and need behind the scenes authentication.
