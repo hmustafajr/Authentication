@@ -1,0 +1,14 @@
+The primary use of the Implicit Grant method is to provide an OAuth solution for native mobile applications.
+Applications using Implicit Grant have a similar workflow to the Auth Code Grant, except they are not required to get an authorization code to retrieve an access token.
+Access tokens are administered upon request at the authentication endpoint.
+To complete the flow you must have:
+- An integrator key
+- A secret key
+- A redirect URI
+- Note in some scenarios you will be prompted and have to confirm that ‘this is a mobile application’
+
+During the initial authentication attempt the user is prompted to give the mobile application permission to run operations.
+Once permission has been granted, the mobile app can make requests for access tokens without the need for an authorization code, this also applies to future calls.
+Your application should include a mechanism to check if the current access code is expired, and if so, make a request to get a new one.
+
+Refresh tokens aren't necessary for the Implicit Grant flow because the app can make an implicit call to obtain a new access token without the need for this parameter included in the request.
