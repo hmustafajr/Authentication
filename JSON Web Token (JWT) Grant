@@ -18,3 +18,7 @@ After it is complete you can make requests to impersonate.
 To accomplish this, in your app’s logic construct a JWT object containing the following pieces of information:
 1. A header that contains the type JWT and denote the algorithm rs256
 2. A request Body containing your app's iKey, the user information as well as some other important parameters
+3. A digital signature that is created using the header and body along with your applications private key
+
+Once this object is built you can make a HTTP request to the desired endpoint. If the JWT is valid then your application is issued an acess token along with a response JSON object.
+Finally, you must use the access token to obtain the service integration user details from the user that is impersonated.
