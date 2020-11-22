@@ -5,10 +5,24 @@ It's recommended that your application authenticates the calls made.
 
 This repository will cover three authentication methods:
 - Auth Code Grant: This method is a multi-step secure OAuth solution that is typically integrated into web application scenarios. This typical flow of Auth Code Grant involves multiple steps that result in obtaining an access token. This flow is typically used when a user is present to take action. If you want a more automated approach you should explore using a JSON Web Token (JWT) grant instead.
+Use - Web applications
+Pro - Secure, requires an authorization code
+Con - More authentication steps when compared to other methods
+Flow - 4 steps before an API call is even made
+Token - Stored in application memory
 
 - Implicit Grant: This method is intended for only mobile application environments. It allows concise and streamlined process for authentication with one less step compared to the Auth Code Grant flow.
 Note: This also means that the Implicit Grant Method is not as secure, because the access token must be stored locally.
+Use - Mobile applications
+Pro - Doesn't require an auth code so there are less steps
+Con - Less secure than Auth Code Grant; tokens are stored on device
+Flow - 3 steps before an API call is even made
+Token - Stored on device for futrue use
 
 - JWT (JSON Wed Token) Grant: This method involves a high degree of trust. The application can impersonate one or more users.
 If your application does not need impersonation capabilities to do automated actions, you should probably not use this and focus on Auth Code Grant instead.
 From High level, JWT is a versatile and secure option for applications that need to run automated services and need behind the scenes authentication.
+Use - Web applications focusing on automated integrations
+Pro - Doesn't require an auth code so there are less steps, secure behind the scenes auth for automated services
+Con - Requires a RSA key pair that will need to be stored somewhere, another one used to sign your JWT object so more testing and development is required
+Token - Stored in application memory
