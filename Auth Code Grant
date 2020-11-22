@@ -14,4 +14,12 @@ It also returns a query string code variable that contains an authorization code
 - This code is then used to make a second request that returns the JSON that contains an access token and refresh token
 
 Finally, you use the access token to retreive data or access resources. If the access token expires the refresh token can be used in another request to retrieve a new access token.
-- Refresh tokens are good for 30 days.
+Note: Refresh tokens are good for 30 days.
+
+Grant flow involves 3 steps in this particular order:
+- Get an Authorization Code (to obtain the tokens) 120s timeout
+- Get Tokens (to obtain user information) 120s timeout
+- Get User Information
+
+Note: The authorization code acquired in step 1 is only valid for 120 seconds. You must pass it into the second request within this window.
+Otherwise, your second request will fail with an error message of INVALID_GRANT. Redo the first 2 steps within 120 seconds of each other.
