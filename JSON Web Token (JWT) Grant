@@ -1,0 +1,20 @@
+JWT is It’s designed to act as an impersonator. For example, you'll use JWT when your application is acting as an automated service integration.
+When using JWT your application doesn't require a user be present to authenticate, and only requires that requests be sent under the umbrella of user(s) part of a trusted pool.
+- The users in that pool have granted the application permission to act on their behalf
+
+The way it works is when a request for JWT access token is generated, it is verified that the request has valid parameters to impersonate a certain user’s account in the pool.
+Once this has been validated an access token is provided in return.
+
+Note: If you plan to build automated tools into your application where it will not be feasible to have a user authenticate manually you would want to use JWT.
+
+To complete the JWT flow you must have an iKey, a secret key, a redirect URI, and you must generate a set of RSA keys and store them on the resource side.
+
+You must also have a user or pool of users that will be used as the admin impersonated account(s).
+
+Workflow:
+During the first authentication attempt you must give the application permission to make calls; this only needs to be done once.
+After it is complete you can make requests to impersonate.
+
+To accomplish this, in your app’s logic construct a JWT object containing the following pieces of information:
+1. A header that contains the type JWT and denote the algorithm rs256
+2. A request Body containing your app's iKey, the user information as well as some other important parameters
